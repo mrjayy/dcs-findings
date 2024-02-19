@@ -1,0 +1,10 @@
+#! /usr/bin/env bash
+
+FILE=CockpitBase.dll
+
+rm $FILE.objdump
+rm $FILE.strings
+
+# winedump -x $FILE > $FILE.winedump
+objdump -x -C $FILE > $FILE.objdump &
+strings -n8 $FILE > $FILE.strings &
